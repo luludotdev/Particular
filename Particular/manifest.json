@@ -1,0 +1,11 @@
+
+{
+  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "author": "lolPants",
+  "description": "Make Beat Saber prettier with P A R T I C L E S",
+  "gameVersion": "1.3.0",
+  "id": "Particular",
+  "name": "Particular",
+  "version": "0.1.0",
+  "features": []
+}
