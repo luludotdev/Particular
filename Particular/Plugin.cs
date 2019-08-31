@@ -1,6 +1,9 @@
 using System;
 using IPA;
-using IPA.Logging;
+using Logger = IPA.Logging.Logger;
+using IPA.Utilities;
+using LibConf;
+using LibConf.Providers;
 using UnityEngine.SceneManagement;
 
 namespace Particular
@@ -8,6 +11,7 @@ namespace Particular
     public class Plugin : IBeatSaberPlugin
     {
         public static Logger log;
+        public static IConfigProvider config;
 
         public void Init(object _, Logger logger)
         {
@@ -16,7 +20,7 @@ namespace Particular
 
         public void OnApplicationStart()
         {
-
+            config = Conf.CreateConfig(ConfigType.YAML, BeatSaber.UserDataPath, "Particular");
         }
 
         public void OnApplicationQuit()
