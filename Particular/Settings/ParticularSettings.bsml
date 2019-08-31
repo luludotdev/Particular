@@ -1,0 +1,13 @@
+<settings-container>
+  <horizontal pref-width='90'>
+    <text text="Particle Settings"></text>
+  </horizontal>
+  <list-slider-setting text='Slash Particles' value='slash-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
+  <list-slider-setting text='Explosion Particles' value='explosion-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
+
+  <horizontal pref-width='90'>
+    <text text="Global Settings"></text>
+  </horizontal>
+  <bool-setting text='Camera Noise' value='camera-noise'></bool-setting>
+  <bool-setting text='World Particles' value='world-particles'></bool-setting>
+</settings-container>

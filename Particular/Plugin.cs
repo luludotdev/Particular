@@ -1,9 +1,11 @@
 using System;
+using BeatSaberMarkupLanguage.Settings;
 using IPA;
 using Logger = IPA.Logging.Logger;
 using IPA.Utilities;
 using LibConf;
 using LibConf.Providers;
+using Particular.Settings;
 using UnityEngine.SceneManagement;
 
 namespace Particular
@@ -35,7 +37,10 @@ namespace Particular
 
         public void OnActiveSceneChanged(Scene old, Scene scene)
         {
-
+            if (scene.name == "MenuCore")
+            {
+                BSMLSettings.instance.AddSettingsMenu("Particular", "Particular.Settings.ParticularSettings.bsml", ParticularSettings.instance);
+            }
         }
 
         public void OnSceneUnloaded(Scene scene)
