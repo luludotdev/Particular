@@ -1,5 +1,7 @@
 using System;
+using System.Reflection;
 using BeatSaberMarkupLanguage.Settings;
+using Harmony;
 using IPA;
 using Logger = IPA.Logging.Logger;
 using IPA.Utilities;
@@ -23,6 +25,21 @@ namespace Particular
         public void OnApplicationStart()
         {
             config = Conf.CreateConfig(ConfigType.YAML, BeatSaber.UserDataPath, "Particular");
+
+            try
+            {
+                HarmonyInstance harmony = HarmonyInstance.Create("com.jackbaron.beatsaber.particular");
+                harmony.PatchAll(Assembly.GetExecutingAssembly());
+            }
+            catch (Exception e)
+            {
+                log.Error(
+                    "This plugin requires Harmony. Make sure you installed the plugin properly, " +
+                    "as the Harmony DLL should have been installed with it."
+                );
+
+                log.Critical(e);
+            }
         }
 
         public void OnApplicationQuit()
