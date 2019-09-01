@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BeatSaberMarkupLanguage.Attributes;
-using Particular.Utils;
 
 namespace Particular.Settings
 {
@@ -133,15 +132,6 @@ namespace Particular.Settings
         {
             get => Plugin.config.GetBoolean("global", "world-particles") ?? true;
             set => Plugin.config.SetBoolean("global", "world-particles", value);
-        }
-
-        internal void Awake()
-        {
-            Plugin.config.SaveDefault("particles", "slash-particles", 1f);
-            Plugin.config.SaveDefault("particles", "explosion-particles", 1f);
-
-            Plugin.config.SaveDefault("global", "camera-noise", true);
-            Plugin.config.SaveDefault("global", "world-particles", true);
         }
 
         [UIAction("#apply")]
