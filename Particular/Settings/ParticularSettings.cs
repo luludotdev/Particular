@@ -7,6 +7,8 @@ namespace Particular.Settings
 {
     public class ParticularSettings : PersistentSingleton<ParticularSettings>
     {
+        internal const float Infinity = 100000f;
+
         [UIValue("particle-values")]
         internal List<object> ParticleValues = new object[]
             {
@@ -100,6 +102,45 @@ namespace Particular.Settings
                 1000f
             }.ToList();
 
+        [UIValue("lifetime-values")]
+        internal List<object> LifetimeValues = new object[]
+            {
+                0f,
+                0.1f,
+                0.2f,
+                0.3f,
+                0.4f,
+                0.5f,
+                0.6f,
+                0.7f,
+                0.8f,
+                0.9f,
+                1f,
+                1.1f,
+                1.2f,
+                1.3f,
+                1.4f,
+                1.5f,
+                1.6f,
+                1.7f,
+                1.8f,
+                1.9f,
+                2f,
+                2.25f,
+                2.5f,
+                2.75f,
+                3f,
+                3.25f,
+                3.5f,
+                3.75f,
+                4f,
+                4.25f,
+                4.5f,
+                4.75f,
+                5f,
+                Infinity,
+            }.ToList();
+
         [UIValue("slash-particles")]
         public float SlashParticles
         {
@@ -114,10 +155,20 @@ namespace Particular.Settings
             set => Plugin.config.SetFloat("particles", "explosion-particles", value);
         }
 
+        [UIValue("particle-lifetime")]
+        public float ParticleLifetime
+        {
+            get => Plugin.config.GetFloat("particles", "particle-lifetime") ?? 1f;
+            set => Plugin.config.SetFloat("particles", "particle-lifetime", value);
+        }
+
         [UIAction("format-percentage")]
         public string FormatValue(float val)
         {
-            return $"{val * 100}%";
+            if (val >= Infinity)
+                return "Infinity";
+            else
+                return $"{val * 100}%";
         }
 
         [UIValue("camera-noise")]

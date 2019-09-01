@@ -4,6 +4,7 @@
   </horizontal>
   <list-slider-setting text='Slash Particles' value='slash-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
   <list-slider-setting text='Explosion Particles' value='explosion-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
+  <list-slider-setting text='Particle Lifetime' value='particle-lifetime' choices='lifetime-values' formatter='format-percentage'></list-slider-setting>
 
   <horizontal pref-width='90'>
     <text text="Global Settings"></text>
