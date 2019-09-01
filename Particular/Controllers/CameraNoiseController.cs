@@ -18,12 +18,19 @@ namespace Particular.Controllers
             instance = this;
             DontDestroyOnLoad(this);
 
-            _noiseTex = Texture2D.blackTexture;
+            UpdateTexture();
+        }
 
+        private void UpdateTexture()
+        {
+            int brightness = Plugin.config.GetInt("global", "camera-noise-brightness") ?? 210;
+            byte v = Convert.ToByte(Mathf.Clamp(brightness, 0, 255));
+
+            _noiseTex = Texture2D.blackTexture;
             Color32[] pixels = _noiseTex.GetPixels32();
             for (int i = 0; i < pixels.Length; i++)
             {
-                pixels[i] = new Color32(0, 0, 0, 255);
+                pixels[i] = new Color32(v, v, v, 255);
             }
 
             _noiseTex.SetPixels32(pixels);
@@ -91,6 +98,8 @@ namespace Particular.Controllers
                     yield break;
                 }
             }
+
+            UpdateTexture();
 
             bool enabled = Plugin.config.GetBoolean("global", "camera-noise") ?? true;
             if (enabled)

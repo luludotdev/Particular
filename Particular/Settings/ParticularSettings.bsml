@@ -10,5 +10,6 @@
     <text text="Global Settings"></text>
   </horizontal>
   <bool-setting text='Camera Noise' value='camera-noise'></bool-setting>
+  <slider-setting text='Brightness Compensation' min='0' max='255' increment='1' value='camera-noise-brightness' integer-only='true'></slider-setting>
   <bool-setting text='World Particles' value='world-particles'></bool-setting>
 </settings-container>

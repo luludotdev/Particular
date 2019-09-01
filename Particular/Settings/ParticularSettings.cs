@@ -179,6 +179,13 @@ namespace Particular.Settings
             set => Plugin.config.SetBoolean("global", "camera-noise", value);
         }
 
+        [UIValue("camera-noise-brightness")]
+        public int CameraNoiseBrightness
+        {
+            get => Plugin.config.GetInt("global", "camera-noise-brightness") ?? 210;
+            set => Plugin.config.SetInt("global", "camera-noise-brightness", value);
+        }
+
         [UIValue("world-particles")]
         public bool WorldParticles
         {
