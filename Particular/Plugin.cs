@@ -69,9 +69,11 @@ namespace Particular
                 GameObject.DontDestroyOnLoad(_controller);
 
                 _controller.AddComponent<WorldParticleController>();
+                _controller.AddComponent<CameraNoiseController>();
             }
 
             WorldParticleController.instance?.OnActiveSceneChanged(scene);
+            CameraNoiseController.instance?.OnActiveSceneChanged(scene);
         }
 
         public void OnSceneUnloaded(Scene scene)

@@ -190,6 +190,7 @@ namespace Particular.Settings
         internal void OnApply()
         {
             WorldParticleController.instance?.ForceUpdate();
+            CameraNoiseController.instance?.ForceUpdate();
         }
     }
 }

@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CameraNoiseController.cs" />
     <Compile Include="Controllers\WorldParticleController.cs" />
     <Compile Include="Patches\NoteCutParticlesEffect_SpawnParticles.cs" />
     <Compile Include="Plugin.cs" />
