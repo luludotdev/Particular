@@ -66,10 +66,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\WorldParticleController.cs" />
     <Compile Include="Patches\NoteCutParticlesEffect_SpawnParticles.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\ParticularSettings.cs" />
+    <Compile Include="Utils\FindObjectsOfTypeAll.cs" />
     <Compile Include="Utils\ReflectionUtil.cs" />
   </ItemGroup>
   <ItemGroup>

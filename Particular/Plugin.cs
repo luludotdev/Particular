@@ -7,7 +7,9 @@ using Logger = IPA.Logging.Logger;
 using IPA.Utilities;
 using LibConf;
 using LibConf.Providers;
+using Particular.Controllers;
 using Particular.Settings;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Particular
@@ -16,6 +18,8 @@ namespace Particular
     {
         public static Logger log;
         public static IConfigProvider config;
+
+        private static GameObject _controller;
 
         public void Init(object _, Logger logger)
         {
@@ -58,6 +62,16 @@ namespace Particular
             {
                 BSMLSettings.instance.AddSettingsMenu("Particular", "Particular.Settings.ParticularSettings.bsml", ParticularSettings.instance);
             }
+
+            if (_controller == null)
+            {
+                _controller = new GameObject("ParticularController");
+                GameObject.DontDestroyOnLoad(_controller);
+
+                _controller.AddComponent<WorldParticleController>();
+            }
+
+            WorldParticleController.instance?.OnActiveSceneChanged(scene);
         }
 
         public void OnSceneUnloaded(Scene scene)

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BeatSaberMarkupLanguage.Attributes;
+using Particular.Controllers;
 
 namespace Particular.Settings
 {
@@ -188,7 +189,7 @@ namespace Particular.Settings
         [UIAction("#apply")]
         internal void OnApply()
         {
-
+            WorldParticleController.instance?.ForceUpdate();
         }
     }
 }
