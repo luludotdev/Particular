@@ -196,7 +196,24 @@ namespace Particular.Settings
         [UIAction("#apply")]
         internal void OnApply()
         {
+            UpdateControllers();
+        }
+
+        [UIAction("#cancel")]
+        internal void OnCancel()
+        {
+            UpdateControllers();
+        }
+
+        private void UpdateControllers() {
             WorldParticleController.instance?.ForceUpdate();
+            CameraNoiseController.instance?.ForceUpdate();
+        }
+
+        [UIAction("on-change-brightness")]
+        internal void OnChangeBrightness(int v)
+        {
+            Plugin.config.SetInt("global", "camera-noise-brightness", v, false);
             CameraNoiseController.instance?.ForceUpdate();
         }
     }
