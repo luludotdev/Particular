@@ -1,6 +1,6 @@
-<settings-container>
+<scrollable-settings-container>
   <horizontal pref-width='90'>
-    <text text='Particle Settings' font-size='6' underlined='true'></text>
+    <text text='Particle Settings' font-size='5.5' underlined='true'></text>
   </horizontal>
   <list-slider-setting text='Slash Particles' value='slash-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
   <list-slider-setting text='Explosion Particles' value='explosion-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
@@ -8,8 +8,8 @@
   <bool-setting text='World Particles' value='world-particles'></bool-setting>
 
   <horizontal pref-width='90'>
-    <text text='Camera Settings' font-size='6' underlined='true'></text>
+    <text text='Camera Settings' font-size='5.5' underlined='true'></text>
   </horizontal>
   <bool-setting text='Camera Noise' value='camera-noise'></bool-setting>
   <slider-setting text='Brightness Compensation' min='0' max='255' increment='1' value='camera-noise-brightness' integer-only='true' on-change='on-change-brightness'></slider-setting>
-</settings-container>
+</scrollable-settings-container>
