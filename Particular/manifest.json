@@ -1,4 +1,3 @@
-
 {
   "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
   "author": "lolPants",
@@ -6,6 +5,14 @@
   "gameVersion": "1.3.0",
   "id": "Particular",
   "name": "Particular",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "dependsOn": {
+    "LibConf": "^1.0.0",
+    "BeatSaberMarkupLanguage": "^1.0.5"
+  },
+  "links": {
+    "project-source": "https://github.com/lolPants/Particular",
+    "donate": "https://monzo.me/jackbaron"
+  },
   "features": []
 }
