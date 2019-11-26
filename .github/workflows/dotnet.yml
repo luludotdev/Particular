@@ -1,0 +1,21 @@
+name: .NET Build
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup MSBuild
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Add Beat Saber DLLs
+      uses: beat-saber-modding-group/action-beat-saber-dlls@ffea301
+    - name: Install dependencies
+      run: msbuild -t:restore
+    - name: Build project
+      run: msbuild Particular/Particular.csproj /t:Build /p:Configuration=Release /p:ReferencePath="D:\beat-saber-dlls"
+    - name: Upload DLLs
+      uses: actions/upload-artifact@v1
+      with:
+        name: Particular-${{ github.sha }}
+        path: ./Particular/bin/Release
