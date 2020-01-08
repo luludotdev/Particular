@@ -2,13 +2,13 @@
   "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
   "author": "lolPants",
   "description": "Make Beat Saber prettier with P A R T I C L E S",
-  "gameVersion": "1.5.0",
+  "gameVersion": "1.6.1",
   "id": "Particular",
   "name": "Particular",
   "version": "1.0.1",
   "dependsOn": {
     "LibConf": "^1.0.1",
-    "BeatSaberMarkupLanguage": "^1.0.6"
+    "BeatSaberMarkupLanguage": "^1.1.1"
   },
   "links": {
     "project-source": "https://github.com/lolPants/Particular",

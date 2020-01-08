@@ -35,14 +35,14 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="BSML, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BSML, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
       <HintPath>../vendor/BSML.dll</HintPath>
+    </Reference>
+    <Reference Include="HMLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>../vendor/HMLib.dll</HintPath>
     </Reference>
     <Reference Include="IPA.Loader">
       <Private>False</Private>
@@ -51,6 +51,10 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
       <HintPath>../vendor/LibConf.dll</HintPath>
+    </Reference>
+    <Reference Include="MainAssembly, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>../vendor/MainAssembly.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
