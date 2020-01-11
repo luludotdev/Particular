@@ -23,7 +23,7 @@ namespace Particular.Controllers
 
         private void UpdateTexture()
         {
-            int brightness = Plugin.config.GetInt("global", "camera-noise-brightness") ?? 210;
+            int brightness = Plugin.Settings.CameraNoiseBrightness;
             byte v = Convert.ToByte(Mathf.Clamp(brightness, 0, 255));
 
             _noiseTex = Texture2D.blackTexture;
@@ -101,7 +101,7 @@ namespace Particular.Controllers
 
             UpdateTexture();
 
-            bool enabled = Plugin.config.GetBoolean("global", "camera-noise") ?? true;
+            bool enabled = Plugin.Settings.CameraNoise;
             if (enabled)
             {
                 blueNoiseDithering.SetField("_noiseTexture", _originalTex);
