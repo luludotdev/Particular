@@ -10,6 +10,8 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Add Beat Saber DLLs
       uses: beat-saber-modding-group/action-beat-saber-dlls@ffea301
+      with:
+        version: '1.6.2'
     - name: Install dependencies
       run: msbuild -t:restore
     - name: Build project
