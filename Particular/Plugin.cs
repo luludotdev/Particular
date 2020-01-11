@@ -44,25 +44,16 @@ namespace Particular
 
                 log.Critical(e);
             }
+
+            BSMLSettings.instance.AddSettingsMenu("Particular", "Particular.Settings.ParticularSettings.bsml", ParticularSettings.instance);
         }
 
-        public void OnApplicationQuit()
-        {
+        public void OnApplicationQuit() { }
 
-        }
-
-        public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-
-        }
+        public void OnSceneLoaded(Scene scene, LoadSceneMode mode) { }
 
         public void OnActiveSceneChanged(Scene old, Scene scene)
         {
-            if (scene.name == "MenuCore")
-            {
-                BSMLSettings.instance.AddSettingsMenu("Particular", "Particular.Settings.ParticularSettings.bsml", ParticularSettings.instance);
-            }
-
             if (_controller == null)
             {
                 _controller = new GameObject("ParticularController");
@@ -76,19 +67,10 @@ namespace Particular
             CameraNoiseController.instance?.OnActiveSceneChanged(scene);
         }
 
-        public void OnSceneUnloaded(Scene scene)
-        {
+        public void OnSceneUnloaded(Scene scene) { }
 
-        }
+        public void OnUpdate() { }
 
-        public void OnUpdate()
-        {
-
-        }
-
-        public void OnFixedUpdate()
-        {
-
-        }
+        public void OnFixedUpdate() { }
     }
 }
