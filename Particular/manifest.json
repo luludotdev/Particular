@@ -5,7 +5,7 @@
   "gameVersion": "1.6.2",
   "id": "Particular",
   "name": "Particular",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "dependsOn": {
     "LibConf": "^1.1.0",
     "BeatSaberMarkupLanguage": "^1.1.2"
