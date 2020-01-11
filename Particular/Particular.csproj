@@ -39,7 +39,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="BSML, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BSML, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
       <HintPath>../vendor/BSML.dll</HintPath>
@@ -47,7 +47,7 @@
     <Reference Include="IPA.Loader">
       <Private>False</Private>
     </Reference>
-    <Reference Include="LibConf.1.0.1.0, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LibConf, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
       <HintPath>../vendor/LibConf.dll</HintPath>
