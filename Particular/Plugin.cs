@@ -20,6 +20,23 @@ namespace Particular
         public static IConfigProvider config;
 
         private static GameObject _controller;
+        private static SettingStore _settings;
+        internal static SettingStore Settings
+        {
+            get
+            {
+                if (_settings == null)
+                {
+                    config.Load();
+                    _settings = new SettingStore(ParticularSettings.instance);
+                }
+                return _settings;
+            }
+            private set
+            {
+                _settings = value;
+            }
+        }
 
         public void Init(object _, Logger logger)
         {
@@ -60,6 +77,8 @@ namespace Particular
 
         public void OnActiveSceneChanged(Scene old, Scene scene)
         {
+            config.Load();
+            Settings.Update(ParticularSettings.instance);
             if (_controller == null)
             {
                 _controller = new GameObject("ParticularController");

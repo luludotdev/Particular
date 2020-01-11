@@ -79,6 +79,7 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\ParticularSettings.cs" />
+    <Compile Include="Settings\SettingStore.cs" />
     <Compile Include="Utils\FindObjectsOfTypeAll.cs" />
     <Compile Include="Utils\ReflectionUtil.cs" />
   </ItemGroup>

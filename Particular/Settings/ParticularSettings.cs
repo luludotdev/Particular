@@ -132,11 +132,25 @@ namespace Particular.Settings
             set => Plugin.config.SetFloat("particles", "explosion-particles", value);
         }
 
-        [UIValue("particle-lifetime")]
-        public float ParticleLifetime
+        [UIValue("slash-particle-lifetime")]
+        public float SlashParticleLifetime
         {
-            get => Plugin.config.GetFloat("particles", "particle-lifetime") ?? 1f;
-            set => Plugin.config.SetFloat("particles", "particle-lifetime", value);
+            get => Plugin.config.GetFloat("particles", "slash-particle-lifetime") ?? 1f;
+            set => Plugin.config.SetFloat("particles", "slash-particle-lifetime", value);
+        }
+
+        [UIValue("explosion-particle-lifetime")]
+        public float ExplosionParticleLifetime
+        {
+            get => Plugin.config.GetFloat("particles", "explosion-particle-lifetime") ?? 1f;
+            set => Plugin.config.SetFloat("particles", "explosion-particle-lifetime", value);
+        }
+
+        [UIValue("rainbow-particles")]
+        public bool RainbowParticles
+        {
+            get => Plugin.config.GetBoolean("particles", "rainbow-particles", false) ?? false;
+            set => Plugin.config.SetBoolean("particles", "rainbow-particles", value);
         }
 
         [UIAction("format-percentage")]
@@ -191,6 +205,19 @@ namespace Particular.Settings
         {
             Plugin.config.SetInt("global", "camera-noise-brightness", v, false);
             CameraNoiseController.instance?.ForceUpdate();
+        }
+
+        private string _settingString;
+
+        public override string ToString()
+        {
+            if (string.IsNullOrEmpty(_settingString))
+            {
+                _settingString = $"SlashParticles: {SlashParticles}, SlashParticleLifetime: {SlashParticleLifetime}, ExplosionParticles: {ExplosionParticles}, " +
+                    $"ExplosionParticleLifetime: {ExplosionParticleLifetime}, CameraNoise: {CameraNoise}, CameraNoiseBrightness: {CameraNoiseBrightness}," +
+                    $" WorldParticles: {WorldParticles}, RainbowParticles: {RainbowParticles}";
+            }
+            return _settingString;
         }
     }
 }

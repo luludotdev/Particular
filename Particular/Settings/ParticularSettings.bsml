@@ -1,10 +1,12 @@
-<scrollable-settings-container>
+<scrollable-settings-container xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
   <horizontal pref-width='90'>
     <text text='Particle Settings' font-size='5.5' underlined='true'></text>
   </horizontal>
   <list-slider-setting text='Slash Particles' value='slash-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
   <list-slider-setting text='Explosion Particles' value='explosion-particles' choices='particle-values' formatter='format-percentage'></list-slider-setting>
-  <list-slider-setting text='Particle Lifetime' value='particle-lifetime' choices='lifetime-values' formatter='format-percentage'></list-slider-setting>
+  <list-slider-setting text='Slash Particle Lifetime' value='slash-particle-lifetime' choices='lifetime-values' formatter='format-percentage'></list-slider-setting>
+  <list-slider-setting text='Explosion Particle Lifetime' value='explosion-particle-lifetime' choices='lifetime-values' formatter='format-percentage'></list-slider-setting>
+  <bool-setting text='Rainbow Particles' value='rainbow-particles'></bool-setting>
   <bool-setting text='World Particles' value='world-particles'></bool-setting>
 
   <horizontal pref-width='90'>
